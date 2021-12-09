@@ -1,0 +1,8 @@
+---
+- name: deploying into remoter server
+  hosts: 192.168.1.26
+  become: yes
+  tasks:
+    - name: copying a war file
+      copy: /var/lib/jenkins/workspace/date_08/target/fresh_fruits.war
+      dest: /opt/apache-tomcat-8.5.73/webapps
